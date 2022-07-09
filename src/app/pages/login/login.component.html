@@ -1,0 +1,65 @@
+
+  <mat-toolbar >
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+  
+    <span class="example-spacer"></span>
+    <a (click)="registrarme()" type="button" class="nav-link text-light pl-4"><i class="fas fa-user-plus"></i> Registrame</a>
+    
+    
+  </mat-toolbar>
+
+        <section id="newsletter" class="py-2">
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-12 d-flex  justify-content-center">
+                      <img class="img-fluid d-none d-sm-block" src="https://lh3.googleusercontent.com/y_GMVb-zXwn6DGrHVv35aY65eSoWds_mne56e7ojIS6pO9YfbovSKNoNk5-mmaSe-vZZY9wCPw-96Gm9c71W3EFNIuW7CKgDY7bjOY_xQuoEvxxmCt5WDq7FaBoU_WVDWsi1Ma4k8Eg3LDuhqA79obgE_SpCo1bXrTnPWHk2KVbDponMvYtEjcR4K33MD31Gthg7VeCGCDGsDWYBvVS1zBk_lo8o1ze-uWya4cVbkRVtKzbGQoj56w9tqu4kHC9ZZ_dFa3VMnS7pg14XKHquDc5fHFa_ucKkt6_0KnB-PMT4h2-YjHOuFUsQsXD_2StheIWw694kmp-ZHIp2GmcLZbsbTsNORoPhtPjn-8kvOvQ9IAIDxXAYvSMijCD2L8m6iqg72VLM6k5QsltAD7DvdhbGfAQUY3l5Ix9nMEVcjOOJ9F5zWq48201WZI1DE48GBVYEYeHhfIlw_Kceic68_WyTWWe34FycH_txVWOsq-w6X2vuiGBmSnc2k0IEoWMfa4z6P2zxkA959dkq6RcCYThssAwXCDM-tGp0jk380ZIGsTTQpSg49icDCZv14ft8TJbeHCQ8yExIIVIapqHzHi4eT4XidE6DNRoplmt2sc8nZY9g8l1F-GJSUDIYmt0DTnttY9CjBFMQbrLiLZqTNs-gdizrPu6ju5yy31DBO5mdDkOEnZKr_VK5Y0zueIwDwi62bGCGtW62T6_II_xPWiHkhehWNG89mrQQ7NsjYAno_nNB-OfN2Xu7woFrG2PcCDcuSaY0_OTD-212jRwdQLx2bRVSW1v_fxRxlg=s289-no?authuser=0" alt=""/>
+                  </div>
+              </div>
+          </div>
+      </section>
+      
+      <div class="container">
+      
+      <div class="row py-2">
+          <div class="col-md-4 mx-auto">
+              <div class="card">
+                  <div class="card-header text-center">
+                      <h1>Iniciar sesión</h1>
+                  </div>
+                  <div class="card-body">
+                      <form [formGroup]="formLogin" (submit)="validarUsuario()">
+
+                        <div class="form-row">
+                          <div class="row">
+                            <div class="form-group col-md-12">
+                              <label class="col-sm-12 col-form-label"><strong>Usuario :</strong></label>
+                              <input type="text" formControlName="usuario"  class="form-control form-control-lg" placeholder="usuario" required autofocus>
+                            </div>
+                            <div class="form-group col-md-12">
+                              <label class="col-sm-12 col-form-label"><strong>Password :</strong></label>
+                              <input type="password" formControlName="password" class="form-control form-control-lg" placeholder="Password" required>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="d-grid gap-2 py-5">
+                           <button class="btn btn-success btn-lg btn-block" [disabled]="!formLogin.valid">
+                              <i class="fa fa-sign-in fa-lg fa-fw"></i> Iniciar Sesión
+                            </button>
+                          </div>
+                          
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      </div>
+
+
+
+
+
+        

@@ -1,0 +1,50 @@
+<mat-card-header>
+    <p>
+      <mat-toolbar color="primary">
+        <span>Agregar Producto</span>
+        <span class="example-spacer"></span>
+      </mat-toolbar>
+    </p>
+  </mat-card-header>
+  <div mat-dialog-content>
+    <form [formGroup]="formProductoAlmacen">
+      <div class="form-group">
+        <div class="row">
+          <mat-form-field class="fullWidth" appearance="outline">
+            <mat-label>Producto</mat-label>
+            <input matInput formControlName="producto">
+          </mat-form-field>
+
+          <mat-form-field class="fullWidth" appearance="outline">
+            <mat-label>Categoria</mat-label>
+            <mat-select formControlName="id_categoria">
+              <mat-option *ngFor="let categoria of categorias" [value]="categoria.id"  >
+                {{categoria.categoria}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="fullWidth" appearance="outline">
+            <mat-label>Unidad</mat-label>
+            <mat-select formControlName="id_unidad">
+              <mat-option *ngFor="let unidad of unidades" [value]="unidad.id" >
+                {{unidad.unidad}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="fullWidth" appearance="outline">
+            <mat-label>Imagen</mat-label>
+            <input matInput formControlName="imagen">
+          </mat-form-field>
+
+        </div>
+  </div>
+  <form class="row g-3">
+    <div class="col-auto">
+      <button mat-raised-button color="primary" [disabled]="!formProductoAlmacen.valid" [mat-dialog-close]="1" (click)="agregarProductoAlmacen()"><mat-icon>save</mat-icon> Aceptar</button>
+    </div>
+    <div class="col-auto">
+      <button mat-raised-button color="warn" (click)="onNoClick()" tabindex="-1"><mat-icon>exit_to_app</mat-icon> Cancelar</button>
+    </div>
+  </form>
